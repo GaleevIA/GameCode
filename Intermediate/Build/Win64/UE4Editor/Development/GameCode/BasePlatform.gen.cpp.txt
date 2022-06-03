@@ -1,0 +1,9 @@
+D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Development\GameCode\Definitions.GameCode.h
+D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Source\GameCode/BasePlatform.h
+D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Source\GameCode\PlatformInvokator.h
+D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Inc\GameCode\PlatformInvokator.generated.h
+D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/TimelineComponent.h
+D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TimelineComponent.generated.h
+D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Inc\GameCode\BasePlatform.generated.h

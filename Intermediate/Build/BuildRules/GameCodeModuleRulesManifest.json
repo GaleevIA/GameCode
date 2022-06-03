@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\PerforceWorkspaces\\GaleevlA_mainline\\GameCode\\ue4\\GameCode\\Source\\GameCode\\GameCode.Build.cs",
+		"D:\\PerforceWorkspaces\\GaleevlA_mainline\\GameCode\\ue4\\GameCode\\Source\\GameCode.Target.cs",
+		"D:\\PerforceWorkspaces\\GaleevlA_mainline\\GameCode\\ue4\\GameCode\\Source\\GameCodeEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}

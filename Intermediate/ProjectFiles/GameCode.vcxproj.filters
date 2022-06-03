@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GameCode.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{FDB43F8B-BBFB-4EF2-82E9-23DD4AA964C7}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GameCode.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GameCodeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{233BF45A-5E12-4976-829E-A418A52D24D3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GameCode">
+      <UniqueIdentifier>{4C5E0388-2ACC-443D-928E-6AC20D886FDC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GameCode\BasePlatform.cpp">
+      <Filter>Source\GameCode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GameCode\BasePlatform.h">
+      <Filter>Source\GameCode</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\GameCode\GameCode.Build.cs">
+      <Filter>Source\GameCode</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GameCode\GameCode.cpp">
+      <Filter>Source\GameCode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GameCode\GameCode.h">
+      <Filter>Source\GameCode</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GameCode\GameCodeGameModeBase.cpp">
+      <Filter>Source\GameCode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GameCode\GameCodeGameModeBase.h">
+      <Filter>Source\GameCode</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GameCode\PlatformInvokator.cpp">
+      <Filter>Source\GameCode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GameCode\PlatformInvokator.h">
+      <Filter>Source\GameCode</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

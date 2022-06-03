@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GameCode",
+			"Path": "D:\\PerforceWorkspaces\\GaleevlA_mainline\\GameCode\\ue4\\GameCode\\Source\\GameCode.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GameCodeEditor",
+			"Path": "D:\\PerforceWorkspaces\\GaleevlA_mainline\\GameCode\\ue4\\GameCode\\Source\\GameCodeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
