@@ -1,7 +1,0 @@
-D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Development\GameCode\Definitions.GameCode.h
-D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Source\GameCode\GameCodeGameModeBase.h
-D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-D:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Inc\GameCode\GameCodeGameModeBase.generated.h

@@ -45,6 +45,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* PlatformMesh;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	USceneComponent* DefaultPlatformRoot;
+
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, meta = (MakeEditWidget))
 	FVector EndLocation;
 
@@ -62,5 +65,5 @@ public:
 	
 	FTimeline PlatformTimeline;
 
-	FOnTimelineEvent OnTimelineEnd;
+	float Cur_Direction = 1;
 };

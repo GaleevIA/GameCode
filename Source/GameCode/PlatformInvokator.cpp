@@ -4,7 +4,9 @@
 void APlatformInvokator::Invoke()
 {
 	if (OnInvocatorActivated.IsBound())
+	{
 		OnInvocatorActivated.Broadcast();
+	}
 }
 
 void APlatformInvokator::BeginPlay()

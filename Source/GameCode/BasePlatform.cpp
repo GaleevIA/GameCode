@@ -5,7 +5,7 @@ ABasePlatform::ABasePlatform()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	USceneComponent* DefaultPlatformRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Platform root"));
+	DefaultPlatformRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Platform root"));
 
 	RootComponent = DefaultPlatformRoot;
 
@@ -17,19 +17,17 @@ void ABasePlatform::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	StartLocation = PlatformMesh->GetRelativeLocation();
+	StartLocation = DefaultPlatformRoot->GetRelativeLocation();
 
 	if (IsValid(TimelineCurve))
 	{
-		OnTimelineEnd.BindUFunction(this, FName("SwitchDirection"));
-		
-		FOnTimelineFloat PlatformMovementTimelineUpdate;
-		PlatformMovementTimelineUpdate.BindUFunction(this, FName("PlatformTimelineUpdate"));
-		PlatformTimeline.AddInterpFloat(TimelineCurve, PlatformMovementTimelineUpdate);
-		PlatformTimeline.SetTimelineFinishedFunc(OnTimelineEnd);
+		PlatformTimeline.AddInterpFloat(TimelineCurve, FOnTimelineFloatStatic::CreateUObject(this, &ABasePlatform::PlatformTimelineUpdate));
+		PlatformTimeline.SetTimelineFinishedFunc(FOnTimelineEventStatic::CreateUObject(this, &ABasePlatform::SwitchDirection));
 		
 		if (PlatformBehavior == EPlatformBehavior::Loop)
+		{
 			PlatformTimelineTiltBegin();
+		}
 	}
 }
 
@@ -42,28 +40,21 @@ void ABasePlatform::Tick(float DeltaTime)
 
 void ABasePlatform::PlatformTimelineUpdate(float Alpha)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Updating"));
-	
-	const FVector PlatformTargetLocation = FMath::Lerp(StartLocation, EndLocation, Alpha);
-	PlatformMesh->SetRelativeLocation(PlatformTargetLocation);
-}
-
-void ABasePlatform::PlatformTimelineChangeDirection()
-{
-	if (PlatformTimeline.IsReversing())
-		PlatformTimeline.PlayFromStart();
-	else
-		PlatformTimeline.ReverseFromEnd();
+	const FVector PlatformTargetLocation = Cur_Direction == 1 ? FMath::Lerp(StartLocation, EndLocation, Alpha) : FMath::Lerp(EndLocation, StartLocation, Alpha);
+	DefaultPlatformRoot->SetWorldLocation(PlatformTargetLocation);
 }
 
 void ABasePlatform::PlatformInvokatorOnInvoked()
 {
-	PlatformTimelineTiltBegin();
+	if (!PlatformTimeline.IsPlaying() && Cur_Direction == 1)
+	{
+		PlatformTimelineTiltBegin();
+	}
 }
 
 void ABasePlatform::PlatformTimelineTiltBegin()
 {
-	PlatformTimeline.Play();
+	PlatformTimeline.PlayFromStart();
 }
 
 void ABasePlatform::PlatformTimelineTiltEnd()
@@ -73,17 +64,17 @@ void ABasePlatform::PlatformTimelineTiltEnd()
 
 void ABasePlatform::SwitchDirection()
 {
-	if (PlatformBehavior == EPlatformBehavior::OnDemand)
+	Cur_Direction *= -1;
+	
+	if (PlatformBehavior == EPlatformBehavior::Loop)
 	{
-		PlatformTimelineChangeDirection();
-
 		FTimerHandle Handle;
-		GetWorld()->GetTimerManager().SetTimer(Handle, this, &ABasePlatform::PlatformTimelineTiltEnd, 2.f, false);
+		GetWorld()->GetTimerManager().SetTimer(Handle, this, &ABasePlatform::PlatformTimelineTiltBegin, 2.f, false);
 	}
-	else
+	else if (PlatformBehavior == EPlatformBehavior::OnDemand && Cur_Direction == -1)
 	{
 		FTimerHandle Handle;
-		GetWorld()->GetTimerManager().SetTimer(Handle, this, &ABasePlatform::PlatformTimelineChangeDirection, 2.f, false);
+		GetWorld()->GetTimerManager().SetTimer(Handle, this, &ABasePlatform::PlatformTimelineTiltBegin, 2.f, false);
 	}
 }
 

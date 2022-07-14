@@ -1,2 +1,0 @@
-D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Intermediate\Build\Win64\UE4Editor\Development\GameCode\Definitions.GameCode.h
-D:\PerforceWorkspaces\GaleevlA_mainline\GameCode\ue4\GameCode\Source\GameCode\GameCode.h
